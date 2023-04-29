@@ -1,17 +1,18 @@
+import { CssBaseline } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import routes from './routes/routes';
+import 'animate.css';
+import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+ 
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2RnYXJjaWE4MTIiLCJhIjoiY2xnejd1a3lmMDlpdDNlb3hhYWl5em9kdSJ9.mYIPmsFtnqiS2xcCnfIrow';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    <CssBaseline/>
+    <RouterProvider router={routes}/>
+  </>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
